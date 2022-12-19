@@ -7,8 +7,7 @@ import clases.Sede;
 public class Start {
 
 	public static void main(String[] args) {
-		
-
+	
 		
 		Proyecto pozos = new Proyecto();
 		pozos.setId(1);
