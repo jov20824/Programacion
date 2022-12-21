@@ -1,4 +1,9 @@
-package museo;
+package main;
+
+import museo.Coleccion;
+import museo.Museo;
+import museo.ObjArqueologico;
+import museo.Ubicacion;
 
 public class StartMuseo {
 
