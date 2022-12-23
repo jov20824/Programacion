@@ -14,6 +14,11 @@ public class Start {
 		System.out.println(marcos);
 		
 		System.out.println(juanjo);
+		
+		
+		Robot ganador = juanjo.lucha(marcos);
+		
+		System.out.println(ganador);
 	}
 
 }

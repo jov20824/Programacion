@@ -15,6 +15,37 @@ public class Robot {
 
 	}
 	
+	public Robot lucha (Robot uno) {
+		
+		if (uno.ataque ==0 && this.ataque == 0) {
+			return null;
+		}
+		while (this.vida >0 && uno.vida >0) {
+			
+			if ( this.aleatorio() > uno.defensa) {
+				uno.vida = uno.vida - this.ataque;
+			}
+			
+			if ( uno.aleatorio() > this.defensa) {
+				this.vida = this.vida - uno.ataque;
+			}
+		}
+		
+		if (this.vida <=0) {
+			return uno;
+		}
+		else {
+			return this;
+		}
+	}
+	
+	private int aleatorio() {
+		
+		int numero = (int)(Math.random()*101);
+		
+		return numero;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
