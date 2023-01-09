@@ -1,5 +1,6 @@
 package main;
 
+import clases.Gimnasio;
 import clases.Robot;
 
 public class Start {
@@ -16,9 +17,10 @@ public class Start {
 		System.out.println(juanjo);
 		
 		
-		Robot ganador = juanjo.lucha(marcos);
+		Robot ganador = Gimnasio.lucha(marcos,juanjo);
 		
 		System.out.println(ganador);
+		
 	}
 
 }

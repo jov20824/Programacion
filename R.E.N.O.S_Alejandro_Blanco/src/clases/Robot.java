@@ -3,9 +3,9 @@ package clases;
 public class Robot {
 	
 	private String nombre;
-	private int vida;
-	private int ataque;
-	private int defensa;
+	protected int vida;
+	protected int ataque;
+	protected int defensa;
 	
 	public Robot (String nombre) {
 		this.nombre=nombre;
@@ -13,33 +13,8 @@ public class Robot {
 		ataque = (int)(Math.random()*21);
 		defensa = (int)(Math.random()*101);
 
-	}
-	
-	public Robot lucha (Robot uno) {
-		
-		if (uno.ataque ==0 && this.ataque == 0) {
-			return null;
-		}
-		while (this.vida >0 && uno.vida >0) {
-			
-			if ( this.aleatorio() > uno.defensa) {
-				uno.vida = uno.vida - this.ataque;
-			}
-			
-			if ( uno.aleatorio() > this.defensa) {
-				this.vida = this.vida - uno.ataque;
-			}
-		}
-		
-		if (this.vida <=0) {
-			return uno;
-		}
-		else {
-			return this;
-		}
-	}
-	
-	private int aleatorio() {
+	}	
+	protected int aleatorio() {
 		
 		int numero = (int)(Math.random()*101);
 		
