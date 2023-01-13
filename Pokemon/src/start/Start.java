@@ -11,7 +11,7 @@ public class Start {
 		Pokemon charizard = new Pokemon("charizard");
 		System.out.println(charizard);
 		Pokemon blastoise = new Pokemon("blastoise");
-		System.out.println(blastosie);
+		System.out.println(blastoise);
 		Pokemon ganador = Lucha.lucha(charizard, blastoise);
 		System.out.println(ganador);
 		

@@ -1,7 +1,5 @@
 package clases;
 
-import java.util.Scanner;
-
 public class Pokemon {
 	
 	protected String nombre;

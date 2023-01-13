@@ -3,6 +3,9 @@ package clases;
 import java.util.Scanner;
 
 public class Lucha {
+	
+	
+	
 	public static Pokemon lucha(Pokemon luchador1 , Pokemon luchador2) {
 		
 		Scanner lector = new Scanner(System.in);
@@ -19,17 +22,20 @@ public class Lucha {
 		
 		while (luchador1.vida>0 && luchador2.vida>0) {
 			String primero = "";
+			int fallo = (int)(Math.random()*101);
 			if (turno) {
 				primero=luchador1.nombre;
 			}
-			else {
+			if (!turno){
 				primero = luchador2.nombre;
 			}
 			System.out.println("Seleccione su ataque (turno de "+primero+")");
 			int ataque =lector.nextInt();
+		
 			
 			if (ataque == 1) {
-				
+				if (turno && luchador1.a1.precision > fallo | !turno && luchador2.a1.precision > fallo ) {
+					
 					if (luchador1.a1.nombre=="llamarada" && turno) {
 						if (luchador2.tipo=="planta") {
 							luchador2.vida -= ((luchador1.a1.danio+luchador1.danio)/2)*1.5;
@@ -39,7 +45,7 @@ public class Lucha {
 						}
 						turno = false;
 					}
-				
+	
 					else if (luchador1.a1.nombre=="hidrobomba" && turno) {
 						if (luchador2.tipo=="fuego") {
 							luchador2.vida -= ((luchador1.a1.danio+luchador1.danio)/2)*1.5;
@@ -59,6 +65,7 @@ public class Lucha {
 						}
 						turno = false;
 					}
+					
 					else if (luchador2.a1.nombre=="llamarada" && !turno) {
 						if (luchador1.tipo=="planta") {
 							luchador1.vida -= ((luchador2.a1.danio+luchador2.danio)/2)*1.5;
@@ -88,8 +95,19 @@ public class Lucha {
 						}
 						turno = true;
 					}
-					
-			}
+			
+			
+				}
+				else {
+					System.out.println("EL ATAQUE HA FALLADO");
+					if (turno) {
+						turno=false;
+					}
+					if (!turno) {
+						turno=true;
+					}
+				}
+			}	
 			if (ataque==2) {
 				
 				if (luchador1.a2.nombre=="lanzallamas" && turno) {
@@ -159,30 +177,32 @@ public class Lucha {
 				}
 				
 			}
-		System.out.println();
-		if (turno&&ataque!=3) {
-			System.out.println("La vida de "+luchador1.nombre+": "+luchador1.vida);
+				
+			System.out.println();
+			if (turno&&ataque!=3) {
+				System.out.println("La vida de "+luchador1.nombre+": "+luchador1.vida);
+			}
+			else if (!turno&&ataque!=3) {
+				System.out.println("La vida de "+luchador2.nombre+": "+luchador2.vida);
+			}
+			else if (turno&&ataque==3) {
+				System.out.println("La vida de "+luchador2.nombre+": "+luchador2.vida);
+			}
+			else if (!turno&&ataque==3) {
+				System.out.println("La vida de "+luchador1.nombre+": "+luchador1.vida);
+			}
 		}
-		else if (!turno&&ataque!=3) {
-			System.out.println("La vida de "+luchador2.nombre+": "+luchador2.vida);
+			
+			lector.close();
+			if (luchador1.vida>0) {
+				return luchador1;
+			}
+			if (luchador2.vida>0) {
+				return luchador2;
+			}
+			else {
+				return null;
+			}
 		}
-		else if (turno&&ataque==3) {
-			System.out.println("La vida de "+luchador2.nombre+": "+luchador2.vida);
-		}
-		else if (!turno&&ataque==3) {
-			System.out.println("La vida de "+luchador1.nombre+": "+luchador1.vida);
-		}
-		}
-		
-		lector.close();
-		if (luchador1.vida>0) {
-			return luchador1;
-		}
-		if (luchador2.vida>0) {
-			return luchador2;
-		}
-		else {
-			return null;
-		}
-	}
 }
+
