@@ -1,7 +1,10 @@
 package clases;
 
+
+
 public class Robot {
 	
+
 	private String nombre;
 	protected int vida;
 	protected int ataque;
