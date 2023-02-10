@@ -42,8 +42,7 @@ public class Baraja {
 				
 				}
 				Carta cartaMeterla = new Carta ((numero+palo) , true);
-				cartas[posicion] = cartaMeterla; 
-				posicion++;
+				cartas[posicion++] = cartaMeterla; 
 			}
 			
 			
@@ -56,9 +55,19 @@ public class Baraja {
 
 	public Carta darCarta() {
 		
-		int aleatorio = (int)(Math.random()*54);
-		while (cartas[aleatorio].enBaraja==false) {
-			aleatorio = (int)(Math.random()*54);
+		int aleatorio = (int)(Math.random()*cartas.length);
+		int intentos=0;
+		boolean encontrado=false;
+		while (!encontrado & intentos<cartas.length) {
+			aleatorio ++;
+			intentos++;
+			encontrado=true;
+		}
+		if (intentos==cartas.length-1) {
+			return null;
+		}
+		if (aleatorio==54) {
+			aleatorio=0;
 		}
 		cartas[aleatorio].enBaraja = false;
 		return cartas[aleatorio];
