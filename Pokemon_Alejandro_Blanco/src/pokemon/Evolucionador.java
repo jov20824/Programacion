@@ -2,5 +2,7 @@ package pokemon;
 
 public interface Evolucionador {
 
-	public String evolucion();
+	
+	public static enum Pokemons  {RAICHU,WARTORTLE,CHARMELEON,PIKACHU,SQUIRTLE,CHARMANDER}
+	public Pokemons evolucion();
 }

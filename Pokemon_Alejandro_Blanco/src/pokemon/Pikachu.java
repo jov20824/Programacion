@@ -27,9 +27,8 @@ public class Pikachu extends Pokemon implements Evolucionador{
 		// TODO Auto-generated method stub
 		return 50;
 	}
-
-	public String evolucion() {
-		
-		return "Raichu";
+	@Override
+	public Pokemons evolucion() {
+		return Evolucionador.Pokemons.RAICHU;
 	}
 }

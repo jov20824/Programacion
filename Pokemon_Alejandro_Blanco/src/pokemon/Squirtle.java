@@ -2,7 +2,6 @@ package pokemon;
 
 public class Squirtle extends Pokemon implements Evolucionador{
 
-	public static final String EVO_WARTORTLE 
 	private int segundosBajoAgua;
 	
 	public Squirtle(String nombre) {
@@ -26,7 +25,8 @@ public class Squirtle extends Pokemon implements Evolucionador{
 		// TODO Auto-generated method stub
 		return 70;
 	}
-	public String evolucion() {
-		return "Wartortle";
+	@Override
+	public Pokemons evolucion() {
+		return Evolucionador.Pokemons.WARTORTLE;
 	}
 }

@@ -25,8 +25,9 @@ public class Charmander extends Pokemon implements Evolucionador {
 		// TODO Auto-generated method stub
 		return 60;
 	}
-	public String evolucion() {
-		
-		return "Charmeleon";
+	@Override
+	public Pokemons evolucion() {
+		return Evolucionador.Pokemons.CHARMELEON;
 	}
+
 }
