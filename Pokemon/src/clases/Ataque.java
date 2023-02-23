@@ -1,7 +1,10 @@
 package clases;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Ataque {
-	
+//	private Map <String,Ataque > Ataque = new HashMap<>();
 	protected String nombre;
 	protected String tipo;
 	protected int danio;
@@ -11,6 +14,7 @@ public class Ataque {
 		this.nombre=nombre;
 		this.cual();
 	}
+	//Leer ataques de un txt
 	private void cual () {
 		
 		if (this.nombre=="llamarada") {
