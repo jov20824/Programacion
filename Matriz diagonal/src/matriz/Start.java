@@ -6,7 +6,9 @@ public class Start {
 
 	public static void main(String[] args) {
 		
-		int[][] matriz = new int[6][6];
+		int filas=7;
+		int columnas=7;
+		int[][] matriz = new int[filas][columnas];
 		
 		int i=0;
 		int j=0;
@@ -14,9 +16,9 @@ public class Start {
 		int numero=0;
 		boolean cambio=false;
 		
-		while (j<5 | i<5) {
+		while (j<(columnas-1) | i<(filas-1)) {
 			if (j<0 & !cambio) {
-				if (i==5) {
+				if (i==(filas-1)) {
 					cambio=true;
 					posicion=0;
 				}
@@ -26,12 +28,12 @@ public class Start {
 					posicion++;
 				}	
 			}
-			if ((i>5|j<0) & cambio) {
+			if ((i>(filas-1)|j<0) & cambio) {
 				i=posicion;
-				j=5;
+				j=(columnas-1);
 				posicion++;
 			}
-			if ((i<6)&(j>=0)) {
+			if ((i<filas)&(j>=0)) {
 				matriz[i][j]=numero;
 				numero++;
 				i++;
