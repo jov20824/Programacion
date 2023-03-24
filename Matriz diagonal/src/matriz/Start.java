@@ -6,7 +6,9 @@ public class Start {
 
 	public static void main(String[] args) {
 		
-		int[][] matriz = new int[6][6];
+		int filas=7;
+		int columnas=7;
+		int[][] matriz = new int[filas][columnas];
 		
 //		int i=0;
 //		int j=0;
@@ -39,7 +41,6 @@ public class Start {
 //			}
 //			
 //		}	
-		
 		
 		//Manu eres un psicópata.
 		
