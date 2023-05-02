@@ -33,35 +33,34 @@ public class Read {
 	
 	
 	
-//	public ArrayList<Planeta> crearPlaneta() {
-//		BufferedReader ficheroEntrada;
-//		UniversoCreator uc = new UniversoCreator();
-////		ArrayList<Planeta> ss = uc.crearUniverso();
-//		
-//			try {
-//				ficheroEntrada = new BufferedReader(new FileReader(FICHERO));
-//				String nombre=ficheroEntrada.readLine();
-//				
-//				while (nombre!= null) {
-//					
-//					String distancia=ficheroEntrada.readLine();
-//
-//					String masa = ficheroEntrada.readLine();
-//
-//					PlanetaCreator pc = new PlanetaCreator();
-//					Planeta planeta = pc.getPlaneta(nombre,distancia,masa);
-//					
-////					if (planeta!=null) ss.add(planeta);
-//					
-//					nombre =ficheroEntrada.readLine();
-//				}
-//				ficheroEntrada.close();
-//				
-//			}catch(IOException e){
-//				System.out.println("Problemas :" +e.getMessage());
-//			}catch(Exception e) {
-//				e.printStackTrace();
-//			}
-////		return ss;
-//	}
+	public ArrayList<Planeta> crearPlaneta() {
+		BufferedReader ficheroEntrada; 
+		ArrayList<Planeta> ss = new ArrayList<Planeta>();
+		
+			try {
+				ficheroEntrada = new BufferedReader(new FileReader(FICHERO));
+				String nombre=ficheroEntrada.readLine();
+				
+				while (nombre!= null) {
+					
+					String distancia=ficheroEntrada.readLine();
+
+					String masa = ficheroEntrada.readLine();
+
+					PlanetaCreator pc = new PlanetaCreator();
+					Planeta planeta = pc.getPlaneta(nombre,distancia,masa);
+					
+					if (planeta!=null) ss.add(planeta);
+					
+					nombre =ficheroEntrada.readLine();
+				}
+				ficheroEntrada.close();
+				
+			}catch(IOException e){
+				System.out.println("Problemas :" +e.getMessage());
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		return ss;
+	}
 }

@@ -14,7 +14,7 @@ public class SistemaSolar {
 
 	public SistemaSolar() {
 		Read read = new Read();
-//		sistemaSolar = read.crearPlaneta();
+		sistemaSolar = read.crearPlaneta();
 	}
 	public SistemaSolar(ArrayList<Planeta> ss) {
 		sistemaSolar = ss;

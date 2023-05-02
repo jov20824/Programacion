@@ -6,9 +6,9 @@ import planeta.Planeta;
 
 public class UniversoCreator {
 
-//	public ArrayList<Planeta> crearUniverso() {
+	//public ArrayList<Planeta> crearUniverso(Planeta planeta) {
 		
 		
 	
-
+	
 }

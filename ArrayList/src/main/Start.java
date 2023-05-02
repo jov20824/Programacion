@@ -90,7 +90,6 @@ public class Start {
 		
 		
 		
-		Read leer = new Read();
 		SistemaSolar ss = new SistemaSolar();
 		System.out.println(ss);
 	}
