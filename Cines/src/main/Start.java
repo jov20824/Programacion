@@ -1,5 +1,7 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import objects.Cine;
@@ -16,6 +18,7 @@ public class Start {
 		Write escribir = new Write();
 		
 		escribir.escribirFichero(cines);
+		
 	}
 
 }
